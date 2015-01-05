@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example page</title>
+</head>
+<body>
+
+    <div id="return"></div>
+
+    <form action="login.php" method="POST" data-return="#return" data-before="beforeFunction" data-after="afterFunction" class="ajaxSubmit">
+        <input id="email" type="text" name="email">
+        <br>
+        <input id="pass" type="password" name="pass">
+        <br>
+        <input type="submit">
+    </form>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../Source/html-ajax.min.js"></script>
+    <script>
+    function beforeFunction(identifier) {
+        if ($('#email', identifier).val() && $('#pass', identifier).val()) {
+            return true;
+        } else {
+            alert('Please correctly fill in all fields.');
+        }
+    }
+
+    function afterFunction(data, identifier) {
+        if (data) {
+            setTimeout(function() {
+                window.location = 'http://google.com';
+            }, 2000);
+        }
+    }
+    </script>
+    <!-- Please ensure you have placed these at the bottom for the best performance -->
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example page</title>
+</head>
+<body>
+
+    <form action="example.php" method="POST" data-before="beforeFunction" class="ajaxSubmit">
+        <input id="email" type="text" name="email">
+        <input type="submit">
+    </form>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../Source/html-ajax.min.js"></script>
+    <script>
+    function beforeFunction(identifier) {
+        if ($('#email', identifier).val()) {
+            return true;
+        } else {
+            alert('fail');
+        }
+    }
+    </script>
+    <!-- Please ensure you have placed these at the bottom for the best performance -->
+</body>
+</html>

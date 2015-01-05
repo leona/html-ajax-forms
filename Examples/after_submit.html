@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example page</title>
+</head>
+<body>
+
+    <form action="example.php" method="POST" data-after="afterFunction" class="ajaxSubmit">
+        <input type="text" name="email" value="example@example.com">
+        <input type="submit">
+    </form>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../Source/html-ajax.min.js"></script>
+    <script>
+    function afterFunction(data) {
+        alert(data);
+    }
+    </script>
+    <!-- Please ensure you have placed these at the bottom for the best performance -->
+</body>
+</html>
